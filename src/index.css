@@ -1,0 +1,13 @@
+.kodemi-span:hover {
+    background-image: linear-gradient(to top, #ffa500, #ffff00);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.kodemi-span-d:hover {
+    background-image: linear-gradient(to top, #00530e, #00af1d);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
