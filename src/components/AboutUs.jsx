@@ -2,7 +2,7 @@ import "../index.css";
 import { useState } from 'react';
 import Card from './Card.jsx';
 
-// import KotKamil from '../images/KotKamil.jpg';
+// import KotKamil from '../images/Mirek3.jpg';
 // import Deznka from '../images/Deznka.jpg';
 // import M1chalS from '../images/M1chalS.jpg';
 // import Miks from '../images/Miks.jpg';
@@ -26,25 +26,29 @@ function AboutUs({ }) {
                 <div className='text-white text-5xl font-extrabold'>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        onClick={() => { cardChange("KotKamil", KotKamil.src) }}
+                        // onClick={() => { cardChange("KotKamil", KotKamil.src) }}
+                        onClick={() => { cardChange("KotKamil", "KotKamil.jpg") }}
                     >
                         Ko
                     </span>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        onClick={() => { cardChange("Deznka", Deznka.src) }}
+                        // onClick={() => { cardChange("Deznka", Deznka.src) }}
+                        onClick={() => { cardChange("Deznka", "Deznka.jpg") }}
                     >
                         De
                     </span>
                     <span
                         className='kodemi-span-d inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        onClick={() => { cardChange("M1chalS", M1chalS.src) }}
+                        // onClick={() => { cardChange("M1chalS", M1chalS.src) }}
+                        onClick={() => { cardChange("M1chalS", "M1chalS.jpg") }}
                     >
                         4
                     </span>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        onClick={() => { cardChange("Miks", Miks.src) }}
+                        // onClick={() => { cardChange("Miks", Miks.src) }}
+                        onClick={() => { cardChange("Miks", "Miks.jpg") }}
                     >
                         Mi
                     </span>
