@@ -1,4 +1,12 @@
 # AboutUs
 
-#Launch:
-npm run dev
+## Technologies
+- Astro
+- React
+- TailwindCSS
+- Typescript
+- Sanity
+
+## Development
+
+```npm run dev```

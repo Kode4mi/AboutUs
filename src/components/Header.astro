@@ -1,5 +1,14 @@
 ---
 // import 'logo.png' from '../../public/logo.png';
+
+
+import {groq, useSanityClient} from "astro-sanity";
+async function getAllProjects() {
+	const query = groq`*[_type == "project"] | order(_createdAt desc)`;
+	return await useSanityClient().fetch(query);
+}
+
+const projects = await getAllProjects();
 ---
 
 <div class='navbar bg-base-300'>
@@ -27,8 +36,9 @@
 				<li>
 					<a>Projekty</a>
 					<ul class='p-2'>
-						<li><a>SOSZD</a></li>
-						<li><a>CZAPOBA</a></li>
+						{projects.map((project) => (
+							<li><a href={`projects/${project.slug.current}`}>{project.title}</a></li>
+						))}
 					</ul>
 				</li>
 				<li><a>Sponsorzy</a></li>
@@ -45,8 +55,9 @@
 				<details>
 					<summary>Projekty</summary>
 					<ul class='p-2'>
-						<li><a>SOSZD</a></li>
-						<li><a>CZAPOBA</a></li>
+						{projects.map((project) => (
+							<li><a href={`projects/${project.slug.current}`}>{project.title}</a></li>
+						))}
 					</ul>
 				</details>
 			</li>

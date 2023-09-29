@@ -1,63 +1,49 @@
 import "../index.css";
-import { useState } from 'react';
+import {useState} from 'react';
 import Card from './Card.jsx';
+import {client} from "../utils/sanity-client.ts";
 
-// import KotKamil from '../images/Mirek3.jpg';
-// import Deznka from '../images/Deznka.jpg';
-// import M1chalS from '../images/M1chalS.jpg';
-// import Miks from '../images/Miks.jpg';
+const data = await client.fetch('*[_type == "card"]');
 
-
-function AboutUs({ }) {
-    const [name, setName] = useState("Kode4mi")
-    const [img, setImg] = useState("logo.png")
-
-    const cardChange = (newName, newImg) => {
-        setName(newName);
-        setImg(newImg);
-    }
+function AboutUs() {
+    const [active, setActive] = useState(0);
 
     return (
         <>
             <div className='text-center h-40'>
                 <h1 className='text-6xl font-extrabold p-5 text-white'
-                    onClick={() => { cardChange("Kode4mi", "logo.png") }}
+                    onClick={() => setActive(0)}
                 >O nas</h1>
                 <div className='text-white text-5xl font-extrabold'>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        // onClick={() => { cardChange("KotKamil", KotKamil.src) }}
-                        onClick={() => { cardChange("KotKamil", "KotKamil.jpg") }}
+                        onClick={() => setActive(1)}
                     >
                         Ko
                     </span>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        // onClick={() => { cardChange("Deznka", Deznka.src) }}
-                        onClick={() => { cardChange("Deznka", "Deznka.jpg") }}
+                        onClick={() => setActive(2)}
                     >
                         De
                     </span>
                     <span
                         className='kodemi-span-d inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        // onClick={() => { cardChange("M1chalS", M1chalS.src) }}
-                        onClick={() => { cardChange("M1chalS", "M1chalS.jpg") }}
+                        onClick={() => setActive(3)}
                     >
                         4
                     </span>
                     <span
                         className='kodemi-span inline-block transition-transform transform-gpu hover:scale-105 cursor-pointer'
-                        // onClick={() => { cardChange("Miks", Miks.src) }}
-                        onClick={() => { cardChange("Miks", "Miks.jpg") }}
+                        onClick={() => setActive(4)}
                     >
                         Mi
                     </span>
                 </div>
             </div>
             <div className='flex items-center justify-center my-10'>
-                <Card name={name} img={img} />
+                <Card active={active} data={data} />
             </div>
-
         </>
     );
 
