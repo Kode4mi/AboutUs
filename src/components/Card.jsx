@@ -3,6 +3,7 @@ import 'animate.css';
 import {useEffect, useState} from 'react';
 import {PortableText} from "@portabletext/react";
 import newImg from '../assets/default-image.webp';
+import {urlFor} from "../utils/sanity-client.ts";
 
 function Card({active, data}) {
     const [cardClasses, setCardClasses] = useState("card lg:card-side bg-slate-700 shadow-xl w-1/3 min-w-[300px] h-fit animate__animated ");
@@ -20,7 +21,7 @@ function Card({active, data}) {
 
     return <>
         {cardData && <div className={cardClasses}>
-            <figure className="h-[250px] lg:h-full lg:w-1/3"><img src={newImg}
+            <figure className="h-[250px] lg:h-full lg:w-1/3"><img alt={cardData.name} src={(cardData.image && urlFor(cardData.image)) ?? newImg.src}
                                                                   className="h-full lg:object-cover lg:h-full"/></figure>
             <div className="card-body lg:w-2/3 h-fit ">
 
