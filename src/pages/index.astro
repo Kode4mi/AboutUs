@@ -2,11 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import AboutUs from '../components/AboutUs.jsx';
+import Projects from '../components/Projects/Projects.jsx';
 ---
 
 <Layout title='Kode4mi Site'>
 	<Header />
 	<AboutUs client:load />
+	<Projects client:load />
 </Layout>
 
 <style></style>

@@ -11,3 +11,11 @@
     -webkit-background-clip: text;
     color: transparent;
 }
+
+/* Dodaj to w pliku CSS lub jako styl inline w komponencie */
+.stack> :not(:first-child) {
+    position: relative;
+    top: -40px;
+    /* Adjust this value based on your design */
+    z-index: -1;
+}

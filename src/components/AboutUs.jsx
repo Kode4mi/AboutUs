@@ -1,7 +1,7 @@
 import "../index.css";
-import {useState} from 'react';
-import Card from './Card.jsx';
-import {client} from "../utils/sanity-client.ts";
+import { useState } from 'react';
+import Card from './AboutUsCard.jsx';
+import { client } from "../utils/sanity-client.ts";
 
 const data = await client.fetch('*[_type == "card"]');
 
